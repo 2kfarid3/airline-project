@@ -5,8 +5,6 @@ import lombok.*;
 
 @Entity
 @Table(name = "airplane")
-@Getter
-@Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,5 +20,29 @@ public class Airplane {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "airplane_type", nullable = false)
     private AirplaneType airplaneType;
+
+    public String getAirplaneId() {
+        return airplaneId;
+    }
+
+    public void setAirplaneId(String airplaneId) {
+        this.airplaneId = airplaneId;
+    }
+
+    public Integer getTotalNumberOfSeats() {
+        return totalNumberOfSeats;
+    }
+
+    public void setTotalNumberOfSeats(Integer totalNumberOfSeats) {
+        this.totalNumberOfSeats = totalNumberOfSeats;
+    }
+
+    public AirplaneType getAirplaneType() {
+        return airplaneType;
+    }
+
+    public void setAirplaneType(AirplaneType airplaneType) {
+        this.airplaneType = airplaneType;
+    }
 }
 
